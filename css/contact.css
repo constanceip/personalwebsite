@@ -1,0 +1,63 @@
+#container {
+	height:400px;
+	margin-bottom:40px;
+}
+
+body {
+	background-color:rgba(4,178,136,0.04);
+}
+
+h3 {
+	color:black;
+}
+
+p {
+	color:#333;
+}
+
+button {
+	color: #04B288;
+	padding:3% 8%;
+  	border: 3px solid #04B288;
+  	background:white;
+  	margin-left:20%;
+  	margin-top:5%;
+  	font-size:16px;
+}
+
+button:hover {
+	background:rgba(0,0,0,0.1);
+}
+
+#contact {
+	width:100%;
+}
+
+#contact-info {
+	clear:both;
+	float:left;
+	display:inline-block;
+	height:500px;
+	width:30%;
+	margin-left:160px;
+
+}
+
+#contact-info a[href^="mailto:"] p {
+	color:#04B288;
+}
+
+#contact-info p {
+	color: #4A4A4A;
+}
+
+#contact-image {
+	width:70%;
+}
+#contact-image img{
+	display:inline-block;
+	float:right;
+	width:30%;
+	margin-right:-130px;
+
+}

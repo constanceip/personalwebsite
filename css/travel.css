@@ -1,0 +1,44 @@
+/*Header*/
+
+#container {
+  background-image: url("../img/travel_hero.png");
+  height:450px;
+}
+
+
+#blog, #photography {
+	float:left;
+	width:49.9%;
+	font-family: 'Merriweather', serif;
+	height:20em;
+	border-bottom:1px solid #888;
+	margin-bottom:5em;
+}
+
+#blog h2{
+	color:rgba(4,178,136,0.8);
+}
+
+#blog {
+	border-right:1px solid #888;
+}
+
+
+#blog h2, #photography h2 {
+	margin-top:25%;
+}
+
+#photography h2{
+	color:#888;
+}
+
+#blog:hover{
+	background-color:rgba(0,0,0, 0.05);
+	
+}
+
+#photography:hover {
+	cursor:pointer;
+	background-color:rgba(0,0,0, 0.05);
+}
+

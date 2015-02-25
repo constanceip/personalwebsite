@@ -1,0 +1,176 @@
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: 'Raleway', sans-serif;
+}
+
+h1 {
+	font-size:65px;
+	font-family: 'Open Sans', sans-serif;
+}
+
+a {
+	text-decoration:none;
+	color:#04B288;
+}
+
+
+#container {
+	background-image: url("../img/hero_home.png");
+	height:650px;
+}
+
+#logo img {
+	width:100px;
+	position:absolute;
+	padding:10px 30px;
+}
+
+#nav {
+	display:block;
+	padding:40px 20px;
+	margin:0;
+}
+
+#nav li {
+	color:white;
+	border-radius:20px;
+	display:inline-block;
+	float:right;
+}
+
+#nav li a {
+	color:white;
+	font-size:14px;
+	padding:5px 20px;
+}
+
+#nav li a:hover{
+	color:#04B288;
+
+}
+
+#nav li ul {
+	position:absolute;
+	visibility:hidden;
+	padding:0;
+	background:rgba(250,250,250, 0.4);
+}
+
+#nav li ul li{
+	display:block;
+	float:none;
+	text-align:left;
+	padding:3% 4%;
+	width:100%;
+
+}
+
+.hero {
+	margin: 10% 20%;
+}
+
+.hero h2 {
+	font-family: 'Merriweather', serif;
+	font-size:20px;
+}
+
+.hero h1, h3, h2 {
+	color:white;
+	text-align:center;
+}
+
+#desc {
+	width:95%;
+	margin:0 auto;
+}
+
+#desc h3 {
+	display:inline;
+	padding: 10px 20px;
+	border: 3px solid white;
+	margin:0 5px;
+}
+
+#desc h3:hover {
+  color: #04B288;
+  border: 3px solid #04B288;
+  background:rgba(250,250,250, 0.3);
+}
+
+/*header over*/
+
+/*MAIN*/
+
+#main{
+	margin:40px auto;
+	border-bottom: 1px dotted rgba(0,0,0,0.5);
+	width:80%;
+}
+
+
+#main h2, p {
+	margin:6% 20%;
+	color: black;
+}
+
+#main2 h2 {
+	margin:20px 20%;
+	color: black;
+}
+
+/*GALLERY*/
+
+#picture-gallery{
+	width:100%;
+	padding-bottom:40px;
+	box-sizing: border-box;
+}
+#gallery, #gallery2 {
+	margin-left:30%;
+	margin-top:0;
+	margin-bottom:0;
+	padding:0;
+	list-style:none;
+	clear:both;
+}
+
+#gallery2 {
+	margin-left:0;
+}
+
+.clearfix:after {
+     content: " "; 
+     display: block; 
+     height: 0; 
+     clear: both; 
+     visibility: hidden;
+     }
+
+
+#gallery li {
+	float:left;
+	width:30%;
+	height:30%;
+	margin:0;
+
+}
+
+#gallery li img {
+	box-shadow:0 0 5px #111;
+	max-width:100%;
+	margin:0;
+}
+
+
+#footer {
+	clear:both;
+	bottom:0;
+	box-sizing:border-box;
+}
+
+#footer p {
+	font-size:14px;
+	text-align: center;
+}

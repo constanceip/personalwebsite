@@ -1,0 +1,21 @@
+/*Header*/
+
+#container {
+  background-image: url("../img/graphicdesign_hero.png");
+  height:450px;
+}
+
+#hero_gallery li, #general_gallery li {
+	float:left;
+	list-style:none;
+}
+#general_gallery li {
+	padding: 0 0.5em;
+}
+
+.main2 p {
+	text-transform:uppercase;
+	font-size:1.5em;
+	text-align:center;
+	text-shadow:0 .5em #ededed;
+}

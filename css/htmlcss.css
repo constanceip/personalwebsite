@@ -1,0 +1,32 @@
+/*Header*/
+
+#container {
+  background-image: url("../img/htmlcss_hero.png");
+  height:450px;
+}
+
+#general_gallery li {
+	float:left;
+	list-style:none;
+	padding: 0 0.5em;
+}
+
+#general_gallery li img{
+	box-shadow:0 0 5px #111;
+}
+
+.main2 {
+	margin-top:3em;
+}
+
+.main2 p {
+	text-align: center;
+}
+
+
+.main2 h3 {
+	text-transform:uppercase;
+	font-size:1.5em;
+	text-align:center;
+	color:black;
+}
