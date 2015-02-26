@@ -42,38 +42,27 @@
   </div>
 
   <!-- START MAIN -->
-    <div id="mad-libs">
 
-      <h3>Constance's Mad Lib</h3>
-        <h4>It's the maddest Lib there is!</h4>
-        <ul>
-          <li>Animal: <input type="text" id="animal">
-          <li>Superlative: <input type="text" id="superlative">
-          <li>Body Part: <input type="text" id="bodypart">
-          <li>Adjective: <input type="text" id="adjective">
-          <li>Noun: <input type="text" id="noun">
-          <li>Adjective: <input type="text" id="adjective2">
-          <li>Noun: <input type="text" id="noun2">
-          <li>Adjective: <input type="text" id="adjective3">
+    <div id="checklist">
+        <h2>My Wedding Checklist</h2>
+        <p>
+        <input id="new-task" type="text" value="Add new item"><button>Add</button>
+        </p>
+        
+        <h4>Checklist</h4>
+        <ul id="incomplete-tasks">
+          <li><input type="checkbox"><label>Find a photographer</label><input type="text"><button class="edit">Edit</button><button class="delete">Delete</button></li>
+          <li class="editMode"><input type="checkbox"><label>Send out invitations</label><input type="text" value="Send out invitations"><button class="edit">Edit</button><button class="delete">Delete</button></li>  
         </ul>
-        <button id="lib-button">Lib it!</button>
-        <div id="story"></div>
 
-    </div>
-
-    <div id="empty">
-    </div>
-
-    <div id="roster">
-      <h4>Make a Roster</h4>
-      <p>
-       <input id="new-name" type="text"><button onclick="addTask()">Add </button>
-      </p>
-
-      <ul id="roster_names">
+         <h4>Completed</h4>
+      <ul id="completed-tasks">
+        <li><input type="checkbox" checked><label>Pick a venue</label><input type="text"><button class="edit">Edit</button><button class="delete">Delete</button></li>
       </ul>
 
     </div>
+
+    <p>Check out more Javascript and jQuery on my <a href="http://codepen.io/cip/">Codepen</a>.</p>
 
 <!--FOOTER-->
   <div id="footer">

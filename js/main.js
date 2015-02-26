@@ -1,6 +1,8 @@
 $(document).ready(function(e) {
     
-       // $(".hero").fadeIn(4000);
+       $("#my_name").hide().fadeIn(1000);
+       $("#desc").hide().delay(500).fadeIn(1000);
+
   
 
      function openSubMenu() {

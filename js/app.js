@@ -1,61 +1,155 @@
-  var taskInput = document.getElementById("new-name");
-  var addButton = document.getElementsByTagName("button")[0]; 
-  var rosterNames = document.getElementById("roster_names");
+var taskInput = document.getElementById("new-task"); 
+var addButton = document.getElementsByTagName("button")[0]; 
+var incompleteTasksHolder = document.getElementById("incomplete-tasks"); 
+var completedTasksHolder= document.getElementById("completed-tasks"); 
+
+var createNewTaskElement = function(taskString) {
+  var listItem = document.createElement("li");
 
 
-  var createNewTaskElement = function(taskString) {
-
-    var listItem = document.createElement("li");
-
-    var label = document.createElement("label");
-    var editInput = document.createElement("input"); 
-
-    var editButton = document.createElement("button");
-    var deleteButton = document.createElement("button");
-    
-    
-    editInput.type = "text";
-    
-    editButton.innerText = "Edit";
-    editButton.className = "edit";
-    deleteButton.innerText = "Delete";
-    deleteButton.className = "delete";
-    
-    label.innerText = taskString;
-    
-
-    listItem.appendChild(label);
-    listItem.appendChild(editInput);
-    listItem.appendChild(editButton);
-    listItem.appendChild(deleteButton);
-
-    return listItem;
-  }
-
-  var addTask = function() {
-    var listItem = createNewTaskElement(taskInput.value);
-    rosterNames.appendChild(listItem);
+  var checkBox = document.createElement("input");
+  var label = document.createElement("label");
+  var editInput = document.createElement("input"); 
+  var editButton = document.createElement("button");
+  var deleteButton = document.createElement("button");
   
+  
+  checkBox.type = "checkbox";
+  editInput.type = "text";
+  editButton.innerText = "Edit";
+  editButton.className = "edit";
+  deleteButton.innerText = "Delete";
+  deleteButton.className = "delete";
+  
+  label.innerText = taskString;
+  
+  listItem.appendChild(checkBox);
+  listItem.appendChild(label);
+  listItem.appendChild(editInput);
+  listItem.appendChild(editButton);
+  listItem.appendChild(deleteButton);
+
+  return listItem;
+}
+
+
+
+var addTask = function() {
+
+  var listItem = createNewTaskElement(taskInput.value);
+
+  incompleteTasksHolder.appendChild(listItem);
+  bindTaskEvents(listItem, taskCompleted);
+  
+  taskInput.value = "";
+}
+
+
+var editTask = function() {
+
+  var listItem = this.parentNode;
+  
+  var editInput = listItem.querySelector("input[type=text]");
+  var label = listItem.querySelector("label");
+  var editButton = listItem.querySelector("button.edit");
+  
+  var containsClass = listItem.classList.contains("editMode");
+  
+
+  if(containsClass) {
+
+    label.innerText = editInput.value;
+  } else {
+
+    editInput.value = label.innerText;
   }
 
+  if(!containsClass) {
 
-// mad libs
+    editButton.innerText = "Save";
+  } else {
+    editButton.innerText = "Edit";
+  }
+  
+listItem.classList.toggle("editMode");
+  
+}
 
-var button = document.getElementById("lib-button");
-        button.onclick = function (e){
-        makeMadLib();
-        }
-function makeMadLib () {
-var animal = document.getElementById("animal").value;
-var superlative = document.getElementById("superlative").value;
-var bodypart = document.getElementById("bodypart").value;
-var adjective = document.getElementById("adjective").value;
-var noun = document.getElementById("noun").value;
-var adjective2 = document.getElementById("adjective2").value;
-var noun2 = document.getElementById("noun2").value;
-var adjective3 = document.getElementById("adjective3").value;
-var story = document.getElementById("story");
-var madlib = "The Lord of " + animal + " is the " + superlative + " of all the Lords in the Kingdom. His " + bodypart + " is " + adjective + " and his grand " + noun + " is " + adjective2 + ". He loves to feast on " + noun2 + " and you must be very " + adjective3 + " around him."
-          story.innerHTML = madlib;}
+
+var deleteTask = function() {
+
+  var listItem = this.parentNode;
+  var ul = listItem.parentNode;
+  
+  ul.removeChild(listItem);
+}
+
+
+var taskCompleted = function() {
+
+  var listItem = this.parentNode;
+  completedTasksHolder.appendChild(listItem);
+  bindTaskEvents(listItem, taskIncomplete);
+}
+
+
+var taskIncomplete = function() {
+
+  var listItem = this.parentNode;
+  incompleteTasksHolder.appendChild(listItem);
+  bindTaskEvents(listItem, taskCompleted);
+}
+
+var bindTaskEvents = function(taskListItem, checkBoxEventHandler) {
+  var checkBox = taskListItem.querySelector("input[type=checkbox]");
+  var editButton = taskListItem.querySelector("button.edit");
+  var deleteButton = taskListItem.querySelector("button.delete");
+  
+  editButton.onclick = editTask;
+  deleteButton.onclick = deleteTask;
+  checkBox.onchange = checkBoxEventHandler;
+}
+
+addButton.onclick = addTask;
+
+
+for(var i = 0; i < incompleteTasksHolder.children.length; i++) {
+  bindTaskEvents(incompleteTasksHolder.children[i], taskCompleted);
+}
+
+for(var i = 0; i < completedTasksHolder.children.length; i++) {
+  bindTaskEvents(completedTasksHolder.children[i], taskIncomplete);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

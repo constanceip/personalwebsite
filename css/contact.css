@@ -1,3 +1,5 @@
+/*GENERAL*/
+
 #container {
 	height:400px;
 	margin-bottom:40px;
@@ -29,6 +31,8 @@ button:hover {
 	background:rgba(0,0,0,0.1);
 }
 
+/*CONTACT STYLING*/
+
 #contact {
 	width:100%;
 }
@@ -51,6 +55,10 @@ button:hover {
 	color: #4A4A4A;
 }
 
+#contact-info a p:hover {
+	color:#04B288;
+}
+
 #contact-image {
 	width:70%;
 }
@@ -61,3 +69,17 @@ button:hover {
 	margin-right:-130px;
 
 }
+
+#contact-info ul li{
+	list-style:none;
+	display:block;
+	border-bottom: 1px solid #dfdfdf;
+}
+
+#contact-info img, p {
+	display: inline-block;
+	margin:2% 2%;
+}
+
+
+
